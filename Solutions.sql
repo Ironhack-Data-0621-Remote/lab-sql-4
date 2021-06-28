@@ -1,30 +1,32 @@
--- Get the unique film ratings.
+-- lab-sql-4
 
--- Get the unique release years.
+select rating from sakila.film;
 
--- Get all films with the word ARMAGEDDON in the title.
+select release_year from sakila.film;
 
--- Get all films with the word APOLLO in the title
+select title from sakila.film
+where title regexp 'ARMAGEDDON';
 
--- Get all films which title ends with the word APOLLO. 
+select title from sakila.film
+where title regexp 'APOLLO';
 
--- Get all films with the word DATE in the title.
+select title from sakila.film
+where title regexp 'APOLLO$';
 
--- Get the 10 films with the longest title.
+select title from sakila.film
+where title regexp 'DATE$';
 
--- Get the 10 longest films.
+select title from sakila.film
+order by length(title) desc
+limit 10;
 
--- How many films include Behind the Scenes content?
+select title from sakila.film
+order by length(length) desc
+limit 10;
 
--- List films ordered by release year and title in alphabetical order.
+select title from sakila.film
+where special_features = 'Behind the Scenes';
 
-
-
-
-
-
-
-
-
-
+select title from sakila.film
+order by release_year and title;
 
